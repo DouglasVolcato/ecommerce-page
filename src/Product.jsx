@@ -14,7 +14,7 @@ export default class Product extends Component{
                     <div className='d-flex justify-content-center'>
                         <div className="w-50"></div>
                         <div className='d-flex justify-content-between w-50'>
-                            <div class='text-light m-1' style={{cursor: "pointer", align: "center"}}>#{this.state.product.id}</div>
+                            <div className='text-light m-1' style={{cursor: "pointer", align: "center", fontWeight: 'bold', fontSize: '1.4rem'}}>#{this.state.product.id}</div>
                             <button type="button" class="btn btn-warning fs-6 fw-bold" onClick={() => this.props.deleteElement(this.props.index)}>X</button>
                         </div>
                     </div>

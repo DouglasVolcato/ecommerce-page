@@ -33,13 +33,12 @@ export default class MainContent extends Component{
 
     render(){
         return <div>
-            <br/><br/><br/>
-            <h4 className="highLight" style={{margin: '1rem'}}>{this.state.appTitle} <span class="border border-dark" style={{padding:'0.2rem 0.7rem 0.2rem 0.7rem', margin: '2rem'}}>{this.state.customersCount}</span>
+            <h4 className="highLight" style={{margin: '1rem'}}>{this.state.appTitle} <span className="border border-dark" style={{padding:'0.2rem 0.7rem 0.2rem 0.7rem', margin: '2rem'}}>{this.state.customersCount}</span>
 
-            <button type="button" class="btn btn-primary" onClick={this.onRefreshClick}>Refresh</button>
+            <button type="button" className="btn btn-primary" onClick={this.onRefreshClick}>Refresh</button>
             </h4>        
 
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th style={{textAlign: "center"}}>ID</th>
@@ -61,11 +60,11 @@ export default class MainContent extends Component{
 
         const newCustomer = arr[Math.floor(Math.random() * arr.length)];
 
-        newCustomer.id = arr.length + 1
+        newCustomer.id = arr.length
 
         arr.push(newCustomer);
         this.setState({customers: arr});
-        this.setState({customersCount: (arr.length)});
+        this.setState({customersCount: (arr.length + 1)});
     }
 
     getPhoneToRender = (phone) =>{
@@ -86,7 +85,7 @@ export default class MainContent extends Component{
                     <td style={this.highLight(cust)}>{this.getPhoneToRender(cust.phone)}</td>
                     <td style={{textAlign: "center"}}><img src={cust.photo} alt="" /></td>
                     <td style={{textAlign: "center"}}><button type="button" class="btn btn-secondary" onClick={() => {
-                    this.onChangePictureClick(index);}}>Click</button></td>
+                    this.onChangePictureClick(cust.id - 1);}}>Click</button></td>
                 </tr>
 
             )
@@ -111,9 +110,9 @@ export default class MainContent extends Component{
 
     highLight = (cust) => {
         if (cust.name.startsWith('D')){
-            return {backgroundColor:'yellow'};
+            return {backgroundColor:'yellow', textAlign: 'center'};
         } else {
-            return {color:'black'};
+            return {color:'black', textAlign: 'center'};
         }
     }
 }

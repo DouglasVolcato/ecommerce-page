@@ -49,13 +49,8 @@ export default class ShoppingCart extends Component{
     render(){
             return( 
             <div>
-
-                <br/><br/><br/>
-                <h2 style={{textAlign: "center"}}>eCommerce</h2>
                 <br/>
-
                 <h4 style={{textAlign: "center"}}>Shoppping Cart</h4>
-
                 <div className="d-flex m-3 flex-wrap justify-content-evenly">
                     {this.state.products.map((prod,index) => {
 
@@ -67,7 +62,7 @@ export default class ShoppingCart extends Component{
                             onDecrement={this.handleDecrement}
                             deleteElement={this.deleteElement}
                             > 
-                                <button type="button" class="btn btn-primary bg-secundary" style={{textAlign: "center"}}>Buy Now</button>
+                                <button type="button" className="btn btn-primary bg-secundary" style={{textAlign: "center"}}>Buy Now</button>
                             </Product>
                     })}
 

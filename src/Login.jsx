@@ -10,19 +10,18 @@ export default class Login extends Component{
     }
     render(){
         return( <form className='p-5'>
-            <br/><br/><br/>
             <h2>Login</h2>
             <br/>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={this.state.email} onChange={(event) => {this.setState({email: event.target.value})}} />
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={this.state.email} onChange={(event) => {this.setState({email: event.target.value})}} />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" value={this.state.password} onChange={(event) => {this.setState({password: event.target.value})}} />
+              <input type="password" className="form-control" id="exampleInputPassword1" value={this.state.password} onChange={(event) => {this.setState({password: event.target.value})}} />
             </div>
 
-            <span class="btn btn-primary m-1" onClick={() => this.onLogin()}>Submit</span>
+            <span className="btn btn-primary m-1" onClick={() => this.onLogin()}>Submit</span>
             {this.state.message}
           </form>
         )
