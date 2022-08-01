@@ -15,7 +15,7 @@ class NavBar extends Component{
             <button onClick={() => {this.props.changePage(1)}} className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Customers</button>
           </li>
           <li className="nav-item" role="presentation">
-            <button onClick={() => {this.props.changePage(2)}} className="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Login</button>
+            <button onClick={() => {this.props.changePage(2)}} className="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Account</button>
           </li>
         </ul>    
       
