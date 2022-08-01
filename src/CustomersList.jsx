@@ -59,12 +59,11 @@ export default class MainContent extends Component{
         const arr = [...this.state.customers];
 
         const newCustomer = arr[Math.floor(Math.random() * arr.length)];
-
-        newCustomer.id = arr.length
-
         arr.push(newCustomer);
+
+        console.log(arr)
         this.setState({customers: arr});
-        this.setState({customersCount: (arr.length + 1)});
+        this.setState({customersCount: (arr.length)});
     }
 
     getPhoneToRender = (phone) =>{
@@ -85,7 +84,7 @@ export default class MainContent extends Component{
                     <td style={this.highLight(cust)}>{this.getPhoneToRender(cust.phone)}</td>
                     <td style={{textAlign: "center"}}><img src={cust.photo} alt="" /></td>
                     <td style={{textAlign: "center"}}><button type="button" class="btn btn-secondary" onClick={() => {
-                    this.onChangePictureClick(cust.id - 1);}}>Click</button></td>
+                    this.onChangePictureClick(index);}}>Click</button></td>
                 </tr>
 
             )
