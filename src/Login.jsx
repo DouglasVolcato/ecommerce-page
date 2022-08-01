@@ -53,8 +53,6 @@ export default class Login extends Component{
 
     onRegister = () => {
 
-        let count = 0
-
         loop: while(true){
             for (let n of this.state.users) {
                 if (this.state.regEmail === n){
